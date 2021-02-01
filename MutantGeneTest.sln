@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutantGeneTestAPI", "MutantGeneTestAPI\MutantGeneTestAPI.csproj", "{87D820B2-34B1-4F04-B7D9-A871284C9648}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutantGeneTestClass", "MutantGeneTestClass\MutantGeneTestClass.csproj", "{C6108AF9-F347-42F2-845C-6F75A1CCB227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutantGeneTestAPI.Tests", "MutantGeneTestAPI.Tests\MutantGeneTestAPI.Tests.csproj", "{37892BCE-47E0-433B-BA36-908D5FC9301B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutantGeneTestAPI", "MutantGeneTestAPI\MutantGeneTestAPI.csproj", "{AE95EAAE-863A-4FEA-8590-90474C666FDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutantGeneTestConsole", "MutantGeneTestConsole\MutantGeneTestConsole.csproj", "{070BFA6F-727B-45D0-B8B4-0A101FDECF7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{87D820B2-34B1-4F04-B7D9-A871284C9648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87D820B2-34B1-4F04-B7D9-A871284C9648}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87D820B2-34B1-4F04-B7D9-A871284C9648}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87D820B2-34B1-4F04-B7D9-A871284C9648}.Release|Any CPU.Build.0 = Release|Any CPU
-		{37892BCE-47E0-433B-BA36-908D5FC9301B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37892BCE-47E0-433B-BA36-908D5FC9301B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37892BCE-47E0-433B-BA36-908D5FC9301B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37892BCE-47E0-433B-BA36-908D5FC9301B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6108AF9-F347-42F2-845C-6F75A1CCB227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6108AF9-F347-42F2-845C-6F75A1CCB227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6108AF9-F347-42F2-845C-6F75A1CCB227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6108AF9-F347-42F2-845C-6F75A1CCB227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE95EAAE-863A-4FEA-8590-90474C666FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE95EAAE-863A-4FEA-8590-90474C666FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE95EAAE-863A-4FEA-8590-90474C666FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE95EAAE-863A-4FEA-8590-90474C666FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{070BFA6F-727B-45D0-B8B4-0A101FDECF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{070BFA6F-727B-45D0-B8B4-0A101FDECF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{070BFA6F-727B-45D0-B8B4-0A101FDECF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{070BFA6F-727B-45D0-B8B4-0A101FDECF7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
