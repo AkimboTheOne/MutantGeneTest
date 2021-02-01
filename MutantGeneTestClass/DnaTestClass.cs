@@ -59,6 +59,17 @@ namespace MutantGeneTestClass
         /// </summary>
         public int Length { get { return _length; } }
 
+        /// <summary>
+        /// firma de cadena dna
+        /// </summary>
+        public string DNASignature { get { return _isValid ? _DNASignature() : ""; } }
+        string _DNASignature()
+        {
+            string _s = "";
+            foreach (var item in _dna)
+                _s += item;
+            return _s;
+        }
 
         /// <summary>
         /// valida y carga una cadena dna en la muestra
@@ -129,6 +140,7 @@ namespace MutantGeneTestClass
 
         // secuencias detectadas
         int _dnaMutantChainSequencesDetected = 0;
+        bool _dnaMutantChainSequencesChecked = false;
         bool _isMutant = false;
         public bool IsMutant()
         {
@@ -139,7 +151,7 @@ namespace MutantGeneTestClass
                 // no es una cadena dna válida
                 if (!_isValid) throw new MutantValidatonException();
                 // ya fué evaulado como mutante
-                if (_isMutant) return true;
+               if (_dnaMutantChainSequencesChecked) return _isMutant;
 
                 // LÓGICA GUARDIAN
                 var _travel  = 0;
@@ -161,11 +173,18 @@ namespace MutantGeneTestClass
 
                 }
                 Debug.WriteLine("EVALUACIONES: " + _travel);
+                // es humano
+                if (_dnaMutantChainSequencesDetected < _minDnaChainSequencesToBeMutant) throw new MutantValidatonException("NO ES UN MUNTANTE");
 
+                _dnaMutantChainSequencesChecked = true;
+                _isMutant = true;
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                _error = ex.Message;
+                _dnaMutantChainSequencesChecked = true;
+                _isMutant = false;
                 return false;
             }
         }
@@ -325,6 +344,7 @@ namespace MutantGeneTestClass
 
             _isMutant = false;
             _dnaMutantChainSequencesDetected = 0;
+            _dnaMutantChainSequencesChecked = false;
         }
 
 

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,7 +14,20 @@ namespace MutantGeneTestAPI
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+
+            // referencia a IWebHost
+            var _host = CreateHostBuilder(args).Build();
+
+            // levantar la BD en el scope de la capa de servicio
+            using (var scope = _host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<MutantDNADBContext>();
+            }
+
+            // levantar la aplicación
+            _host.Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

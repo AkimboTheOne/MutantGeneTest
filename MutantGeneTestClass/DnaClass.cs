@@ -8,7 +8,6 @@ namespace MutantGeneTestClass
 {
     public class DnaClass
     {
-
         public string[] dna { get; set; }
 
     }

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutantGeneTestClass", "Muta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutantGeneTestAPI", "MutantGeneTestAPI\MutantGeneTestAPI.csproj", "{AE95EAAE-863A-4FEA-8590-90474C666FDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutantGeneTestConsole", "MutantGeneTestConsole\MutantGeneTestConsole.csproj", "{070BFA6F-727B-45D0-B8B4-0A101FDECF7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutantGeneTestConsole", "MutantGeneTestConsole\MutantGeneTestConsole.csproj", "{070BFA6F-727B-45D0-B8B4-0A101FDECF7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
