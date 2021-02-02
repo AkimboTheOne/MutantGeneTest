@@ -62,8 +62,8 @@ namespace MutantGeneTestAPI.Controllers
 
         [HttpPost]
         [Route("api/mutant")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(DnaClass), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorEnvelopeClass), StatusCodes.Status400BadRequest)]
         public IActionResult Post(DnaClass dna)
         {
             try
@@ -90,8 +90,8 @@ namespace MutantGeneTestAPI.Controllers
 
         [HttpGet]
         [Route("api/mutant/stats")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(DnaStatsClass), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorEnvelopeClass), StatusCodes.Status400BadRequest)]
         public IActionResult GetStats()
         {
             try

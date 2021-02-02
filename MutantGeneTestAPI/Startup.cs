@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.OpenApi.Models;
 
 namespace MutantGeneTestAPI
 {
@@ -29,6 +30,35 @@ namespace MutantGeneTestAPI
 
             // BD en memoria
             services.AddDbContext<MutantDNADBContext>(options => options.UseInMemoryDatabase(databaseName: "DNA"));
+
+            // servicio de documentación swagger (básico)
+            AddSwagger(services);
+
+        }
+
+        /// <summary>
+        /// configuración swagger
+        /// </summary>
+        /// <param name="services"></param>
+        private void AddSwagger(IServiceCollection services)
+        {
+            services.AddSwaggerGen(options =>
+            {
+                var groupName = "v1";
+
+                options.SwaggerDoc(groupName, new OpenApiInfo
+                {
+                    Title = $"Foo {groupName}",
+                    Version = groupName,
+                    Description = "MutantGeneTestAPI",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Assessment",
+                        Email = String.Empty,
+                        Url = new Uri("https://github.com/akimbo2k/MutantGeneTest"),
+                    }
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +77,14 @@ namespace MutantGeneTestAPI
             {
                 endpoints.MapControllers();
             });
+
+            // servicio de documentación swagger (básico)
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MutantGeneTestAPI v1");
+            });
+
         }
     }
 }
